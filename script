@@ -1,0 +1,55 @@
+<?php
+	session_start();
+	require_once('../classes/DatabasePDOInstance.function.php');
+	
+//require_once('../classes/DatabasePDOInstance.function.php');
+	$db = DatabasePDOInstance();
+	$date = date('Y-m-d');
+	for($i = date('m'); $i <= 12; $i++) {
+		for($j = 1; $j <= date("t"); $j++) {
+			$d = date("w", strtotime("$j-$i-2018"));
+				if($d == 1){
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Core Balance', 'Core Balance', '79', '5', '30', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 08:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Ofit Boxing', 'Ofit Boxing', '50', '5', '30', '45 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 19:00:00', NULL);");
+				}
+				if($d == 2){
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Core Balance', 'Core Balance', '79', '5', '30', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 08:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Ofit Boxing', 'Ofit Boxing', '50', '5', '30', '45 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 19:00:00', NULL);");
+				}
+				if($d == 3){
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Core Balance', 'Core Balance', '79', '5', '30', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 08:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 10:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 10:30:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 11:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 11:30:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 12:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 12:30:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 13:00:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 13:30:00', NULL);");
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Fisio', 'Fisio', '79', '5', '1', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 14:00:00', NULL);");			
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Power Core', 'Power Core', '50', '5', '30', '45 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 19:00:00', NULL);");
+				}
+				if($d == 4){
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Core Balance', 'Core Balance', '79', '5', '30', '30 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 08:00:00', NULL);");		
+				$db->query("INSERT INTO clases (nombre, descripcion, id_profesor, id_empresa, cantidad_alumnos, duracion, fecha, grupo) 
+					VALUES ('Power Core', 'Power Core', '50', '5', '30', '45 min.', '2018-$i-".($j > 9 ? $j : "0$j")." 19:00:00', NULL);");
+				}
+	}
+}
+echo "Clases agregadas a partir de hoy hasta Diciembre";
